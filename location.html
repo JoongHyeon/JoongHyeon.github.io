@@ -6,6 +6,17 @@
     <title>오시는 길 - 김중인 세무사</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        :root {
+            --primary-color: #3498db;
+            --text-color: #2c3e50;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+            --naver-color: #03C75A;
+            --naver-hover: #02B351;
+        }
+
         body {
             min-height: 100vh;
             display: flex;
@@ -60,6 +71,32 @@
             border-radius: 4px;
         }
 
+        .map-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--naver-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+            margin: 0;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .map-button i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .map-button:hover {
+            background: var(--naver-hover);
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .location-content {
                 grid-template-columns: 1fr;
@@ -80,8 +117,10 @@
                     <p><strong>소속:</strong> 세무법인대양 중앙지점</p>
                     <p><strong>주소:</strong> 경기도 안산시 단원구 고잔동 518<br>경기 안산시 단원구 화랑로 358 116, 117호</p>
                     <p><strong>전화:</strong> 0507-1479-4462</p>
-                    <p><strong>영업시간:</strong> 평일 09:00 - 18:00</p>
-                    <a href="https://map.naver.com/p/search/%EC%84%B8%EB%AC%B4%EB%B2%95%EC%9D%B8%EB%8C%80%EC%96%91%20%EC%A4%91%EC%95%99%EC%A7%80%EC%A0%90/place/1526559538?c=16.00,0,0,0,dh&isCorrectAnswer=true" target="_blank" class="map-button">네이버지도 바로가기 ></a>
+                    <a href="https://map.naver.com/p/search/%EC%84%B8%EB%AC%B4%EB%B2%95%EC%9D%B8%EB%8C%80%EC%96%91%20%EC%A4%91%EC%95%99%EC%A7%80%EC%A0%90/place/1526559538?c=16.00,0,0,0,dh&isCorrectAnswer=true" target="_blank" class="map-button">
+                        <i class="fas fa-map-marker-alt"></i>
+                        네이버지도 바로가기
+                    </a>
                     <h3>대중교통 이용안내</h3>
                     <p><strong>지하철:</strong> 4호선 중앙역 1번 출구에서 도보 5분</p>
                     <p><strong>버스:</strong> 중앙역 정류장 하차</p>
