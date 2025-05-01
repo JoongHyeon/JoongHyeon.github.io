@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김중인 세무사</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* 공통 스타일 */
+        :root {
+            --primary-color: #3498db;
+            --text-color: #2c3e50;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 서비스 섹션 */
+        .services {
+            background: white;
+            overflow: hidden;
+        }
+
+        .swiper {
+            width: 100%;
+            padding: 2rem 0;
+        }
+
+        .swiper-slide {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: auto;
+        }
+
+        .swiper-slide:hover {
+            transform: translateY(-5px);
+        }
+
+        .swiper-slide h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .swiper-slide p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 1.2rem;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: #ccc;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary-color);
+            width: 20px;
+            border-radius: 4px;
+        }
+
+        /* 정보 섹션 */
+        .info-section {
+            background: var(--bg-light);
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .info-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-item h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .info-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* 연락처 섹션 */
+        .contact-section {
+            background: var(--bg-light);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .map-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .contact-details {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-details h2 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        .map-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .map-button:hover {
+            background: #2980b9;
+        }
+
+        .map-container {
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 1200px) {
+            .info-container,
+            .map-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="hero">
+            <h1>김중인 세무사</h1>
+            <h2>세무법인대양 중앙지점</h2>
+            <p>믿을 수 있는 세무 전문가와 함께하세요</p>
+        </section>
+
+        <section class="services">
+            <h2>주요 서비스</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h3>1:1 맞춤컨설팅</h3>
+                        <p>고객님의 상황에 맞는 맞춤형 세무 컨설팅을 제공합니다.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h3>기장대행</h3>
+                        <p>전문적인 회계 처리와 세무 기장 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h3>재산제세</h3>
+                        <p>상속, 증여, 양도소득세 등 재산 관련 세무 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h3>사업자등록/법인설립</h3>
+                        <p>사업자등록 대행, 법인설립 및 전환 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h3>조사대응/조세불복</h3>
+                        <p>세무조사 대응 및 조세불복 절차를 지원합니다.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h3>세금신고</h3>
+                        <p>법인세, 종합소득세, 부가가치세 등 각종 세금 신고를 대행합니다.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h3>절세상담</h3>
+                        <p>합법적인 절세 방안을 제시하고 컨설팅합니다.</p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>CALL</h3>
+                    <p>0507-1479-4462</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>OPEN HOURS</h3>
+                    <p>월 - 금 09:00 - 18:00</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>LOCATION</h3>
+                    <p>경기도 안산시 단원구 고잔동 518<br>경기 안산시 단원구 화랑로 358 116, 117호</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="map-info">
+                    <div class="contact-details">
+                        <h2>CONTACT US</h2>
+                        <p><strong>세무사:</strong> 김중인</p>
+                        <p><strong>소속:</strong> 세무법인대양 중앙지점</p>
+                        <p><strong>주소:</strong> 경기도 안산시 단원구 고잔동 518<br>경기 안산시 단원구 화랑로 358 116, 117호</p>
+                        <p><strong>전화:</strong> 0507-1479-4462</p>
+                        <a href="https://map.naver.com/p/search/%EC%84%B8%EB%AC%B4%EB%B2%95%EC%9D%B8%EB%8C%80%EC%96%91%20%EC%A4%91%EC%95%99%EC%A7%80%EC%A0%90/place/1526559538?c=16.00,0,0,0,dh&isCorrectAnswer=true" target="_blank" class="map-button">네이버지도 바로가기 ></a>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.5387876655584!2d126.82530087677763!3d37.32099647198508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6f072618a211%3A0xd5d255f2eb72bffe!2z6rK96riw64-EIOyViOyCsOyLnCDri7nsm5Dqtawg6rOg7J6l64-ZIDUxOA!5e0!3m2!1sko!2skr!4v1709701847744!5m2!1sko!2skr"
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: 8px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Swiper('.swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+        });
+    </script>
+</body>
+</html> 

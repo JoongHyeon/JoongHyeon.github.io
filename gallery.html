@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤러리 - 김중인 세무사</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 120px auto 40px;
+            padding: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-item-content {
+            padding: 1rem;
+        }
+
+        .gallery-item-content h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-content p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="gallery-container">
+            <h2>갤러리</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/office1.jpg" alt="사무실 전경">
+                    <div class="gallery-item-content">
+                        <h3>사무실 전경</h3>
+                        <p>세무법인대양 중앙지점의 모던한 사무실</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/meeting1.jpg" alt="상담 모습">
+                    <div class="gallery-item-content">
+                        <h3>전문 상담</h3>
+                        <p>고객님과의 전문적인 세무 상담</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/team1.jpg" alt="팀 활동">
+                    <div class="gallery-item-content">
+                        <h3>팀 활동</h3>
+                        <p>전문가 팀의 활발한 업무 현장</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
